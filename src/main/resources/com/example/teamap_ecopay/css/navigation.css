@@ -1,0 +1,20 @@
+#plantbtn{
+    -fx-background-color: #6A937D;
+    -fx-background-radius: 50%;
+}
+
+#hbox{
+    -fx-background-color: #F4F4F4;
+}
+
+#textbox{
+    -fx-background-color: #F4F4F4;
+}
+
+#main{
+    -fx-background-color: white;
+}
+
+#btns{
+    -fx-background-color: transparent;
+}
