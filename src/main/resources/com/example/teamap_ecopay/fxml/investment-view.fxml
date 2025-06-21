@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="587.0" prefWidth="375.0" stylesheets="@../css/investment.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamap_ecopay.Controllers.Forms.InvestmentControllerForm">
+   <children>
+      <Label layoutX="105.0" layoutY="14.0" text="Invest Now" textFill="#15430c">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <HBox layoutX="14.0" layoutY="84.0" prefHeight="37.0" prefWidth="347.0" styleClass="slidebar">
+         <children>
+            <Label alignment="CENTER" prefHeight="46.0" prefWidth="104.0" text="ALL" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <AnchorPane minHeight="30.0" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: white; -fx-background-radius: 15;">
+               <children>
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="11.0" prefHeight="17.0" prefWidth="140.0" text="GREEN INVESTMENT" textFill="#15430c">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label alignment="CENTER" prefHeight="46.0" prefWidth="116.0" text="ESG FUNDS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="20.0" layoutY="138.0" text="SUGGESTIONS" textFill="#8dad8c">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <HBox layoutX="14.0" layoutY="160.0" prefHeight="129.0" prefWidth="347.0" styleClass="investCon">
+         <children>
+            <AnchorPane prefHeight="129.0" prefWidth="171.0">
+               <children>
+                  <ImageView fitHeight="116.0" fitWidth="137.0" layoutX="4.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/investment1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <VBox prefHeight="129.0" prefWidth="203.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="190.0" text="Return: 6.5% Annual" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="invest1" prefHeight="26.0" prefWidth="190.0" text="Cost: RM 3000" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="26.0" prefWidth="190.0" text="Impact: -12 tons CO2 / Year" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="investBtn1" mnemonicParsing="false" onAction="#investAction" prefHeight="25.0" prefWidth="106.0" styleClass="investBtn" text="INVEST" />
+                  <Label alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="178.0" text="Detail &gt;" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="8.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="300.0" prefHeight="129.0" prefWidth="347.0" styleClass="investCon">
+         <children>
+            <AnchorPane prefHeight="129.0" prefWidth="158.0">
+               <children>
+                  <ImageView fitHeight="107.0" fitWidth="137.0" layoutX="7.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/investment2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <VBox prefHeight="129.0" prefWidth="193.0">
+               <children>
+                  <Label prefHeight="29.0" prefWidth="191.0" text="Return: 3.3% Annual" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="invest2" prefHeight="24.0" prefWidth="191.0" text="Cost: RM1000" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="22.0" prefWidth="191.0" text="Impact: -5 tons CO2/Year" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="investBtn2" mnemonicParsing="false" onAction="#investAction" prefHeight="25.0" prefWidth="106.0" styleClass="investBtn" text="INVEST" />
+                  <Label alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="178.0" text="Detail &gt;" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="8.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="440.0" prefHeight="129.0" prefWidth="347.0" styleClass="investCon">
+         <children>
+            <AnchorPane prefHeight="129.0" prefWidth="160.0">
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="140.0" layoutX="5.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/investment3.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <VBox prefHeight="129.0" prefWidth="199.0">
+               <children>
+                  <Label prefHeight="26.0" prefWidth="191.0" text="Return: 7.8% Annual" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="invest3" prefHeight="21.0" prefWidth="191.0" text="Cost: RM 4300" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="23.0" prefWidth="191.0" text="Impact: -10 tons CO2/Year" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="investBtn3" mnemonicParsing="false" onAction="#investAction" prefHeight="25.0" prefWidth="106.0" styleClass="investBtn" text="INVEST" />
+                  <Label alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="178.0" text="Detail &gt;" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="8.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

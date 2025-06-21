@@ -4,6 +4,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -21,13 +22,15 @@ public class DashboardControllerForm {
     private AnchorPane addMoneyPane,dashboardPane;
 
     @FXML
-    private Label currentBalanceLabel;
+    private Label currentBalanceLabel,incomeLabel,spentLabel;
 
 
     public void increaseAction(){
         try {
             double current = Double.parseDouble(amountField.getText());
             current += 10;
+
+
             amountField.setText(String.format("%.2f", current));
         } catch(NumberFormatException e){
             amountField.setText("0.00");
@@ -50,9 +53,14 @@ public class DashboardControllerForm {
     public void addToBalance(){
         try {
             String currentText = currentBalanceLabel.getText().replace("RM", "").trim();
+            String incomeText = incomeLabel.getText().replace("RM", "").trim();
+
             double currentBalance = Double.parseDouble(currentText);
+            double currentIncome = Double.parseDouble(incomeText);
+
             double amount = Double.parseDouble(amountField.getText());
             double newBalance = currentBalance + amount;
+            double newIncome = currentIncome + amount;
 
             currentBalanceLabel.setText(String.format("RM%.2f", newBalance));
 
@@ -61,6 +69,34 @@ public class DashboardControllerForm {
             backAction();
         } catch (NumberFormatException e) {
             amountField.setText("0.00");
+        }
+    }
+
+    public void deductInvestment(double amount) {
+        try {
+            double balance = Double.parseDouble(currentBalanceLabel.getText().replace("RM", "").trim());
+            double spent = Double.parseDouble(spentLabel.getText().replace("RM", "").trim());
+
+            if (balance >= amount) {
+                balance -= amount;
+                spent += amount;
+
+                currentBalanceLabel.setText(String.format("RM%.2f", balance));
+                spentLabel.setText(String.format("RM%.2f", spent));
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("The investment has been made");
+                alert.setContentText("You do not have enough balance to invest RM" + String.format("%.2f", amount));
+                alert.showAndWait();
+
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Insufficient Balance");
+                alert.setContentText("You do not have enough balance to invest RM" + String.format("%.2f", amount));
+                alert.showAndWait();
+
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
         }
     }
 
@@ -78,7 +114,7 @@ public class DashboardControllerForm {
 
     @FXML
     public void initialize() {
-        handleTransition(addBalanceBtn, "Add Balance", 120, 40); // <- width in pixels
+        handleTransition(addBalanceBtn, "Add Balance", 120, 40);
     }
 
     public void handleTransition(Button button, String text, double expandedWidth, double originalWidth) {

@@ -1,0 +1,16 @@
+.slidebar{
+    -fx-background-color: linear-gradient(to bottom, #819A91, #9FC87E );
+    -fx-background-radius:15px;
+}
+
+.investCon{
+    -fx-background-color: linear-gradient(to bottom, #819A91, #9FC87E );
+    -fx-background-radius:5px;
+
+}
+
+.investBtn {
+    -fx-background-color:white;
+    -fx-background-radius:10px;
+    -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,.3), 8,0,0,0);
+}
