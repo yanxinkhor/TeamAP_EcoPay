@@ -39,7 +39,7 @@ public class DashboardControllerForm {
     public void increaseAction(){
         try {
             double current = Double.parseDouble(amountField.getText());
-            current += 10;
+            current += 50;
 
 
             amountField.setText(String.format("%.2f", current));
@@ -52,7 +52,7 @@ public class DashboardControllerForm {
         try {
             double current = Double.parseDouble(amountField.getText());
             if (current > 0) {
-                current -= 10;
+                current -= 50;
                 if (current < 0) current = 0;
                 amountField.setText(String.format("%.2f", current));
             }
