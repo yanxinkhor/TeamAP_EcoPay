@@ -4,12 +4,15 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
+
 
 public class DashboardControllerForm {
     @FXML
@@ -24,6 +27,14 @@ public class DashboardControllerForm {
     @FXML
     private Label currentBalanceLabel,incomeLabel,spentLabel;
 
+    @FXML
+    private LineChart<String, Number> lineChart;
+
+    @FXML
+    public void initialize() {
+        handleTransition(addBalanceBtn, "Add Balance", 120, 40);
+        setupWeeklyCarbonChart();
+    }
 
     public void increaseAction(){
         try {
@@ -63,6 +74,7 @@ public class DashboardControllerForm {
             double newIncome = currentIncome + amount;
 
             currentBalanceLabel.setText(String.format("RM%.2f", newBalance));
+            incomeLabel.setText((String.format("RM%.2f", newIncome)));
 
 
             amountField.setText("0.00");
@@ -76,6 +88,7 @@ public class DashboardControllerForm {
         try {
             double balance = Double.parseDouble(currentBalanceLabel.getText().replace("RM", "").trim());
             double spent = Double.parseDouble(spentLabel.getText().replace("RM", "").trim());
+            System.out.println(spent);
 
             if (balance >= amount) {
                 balance -= amount;
@@ -85,7 +98,7 @@ public class DashboardControllerForm {
                 spentLabel.setText(String.format("RM%.2f", spent));
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("The investment has been made");
-                alert.setContentText("You do not have enough balance to invest RM" + String.format("%.2f", amount));
+                alert.setContentText("You have invested RM" + String.format("%.2f", amount));
                 alert.showAndWait();
 
             } else {
@@ -112,11 +125,6 @@ public class DashboardControllerForm {
     }
 
 
-    @FXML
-    public void initialize() {
-        handleTransition(addBalanceBtn, "Add Balance", 120, 40);
-    }
-
     public void handleTransition(Button button, String text, double expandedWidth, double originalWidth) {
         button.setOnMouseEntered(event -> {
             button.setText(text);
@@ -138,4 +146,23 @@ public class DashboardControllerForm {
             shrink.play();
         });
     }
+
+    private void setupWeeklyCarbonChart() {
+        XYChart.Series<String, Number> carbonSeries = new XYChart.Series<>();
+        carbonSeries.setName("Weekly Carbon Emissions (kg CO₂)");
+
+        // Sample data - replace with real data later
+        carbonSeries.getData().add(new XYChart.Data<>("Mon", 1.5));
+        carbonSeries.getData().add(new XYChart.Data<>("Tue", 2.0));
+        carbonSeries.getData().add(new XYChart.Data<>("Wed", 3.0));
+        carbonSeries.getData().add(new XYChart.Data<>("Thu", 3.1));
+        carbonSeries.getData().add(new XYChart.Data<>("Fri", 4.2));
+        carbonSeries.getData().add(new XYChart.Data<>("Sat", 5.0));
+        carbonSeries.getData().add(new XYChart.Data<>("Sun", 7.5));
+
+        lineChart.getData().clear();
+        lineChart.getData().add(carbonSeries);
+    }
+
+
 }

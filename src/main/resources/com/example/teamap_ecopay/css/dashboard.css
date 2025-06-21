@@ -60,3 +60,8 @@
     -fx-border-color:black;
     -fx-border-radius:20px;
 }
+
+.slidebar{
+    -fx-background-color: linear-gradient(to left, #DEEBDE, #BEE3BD);
+    -fx-
+}

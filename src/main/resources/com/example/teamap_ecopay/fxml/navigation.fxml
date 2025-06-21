@@ -40,7 +40,7 @@
                         <Insets bottom="5.0" left="20.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button id="plantbtn" mnemonicParsing="false" prefHeight="46.0" prefWidth="51.0">
+                  <Button id="plantbtn" fx:id="footprintBtn" mnemonicParsing="false" onAction="#SwitchAction" prefHeight="46.0" prefWidth="51.0">
                      <graphic>
                         <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>

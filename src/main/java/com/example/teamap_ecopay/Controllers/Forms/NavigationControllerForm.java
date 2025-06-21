@@ -17,36 +17,43 @@ public class NavigationControllerForm implements Initializable {
     @FXML
     private Pane contentPane;
 
-    @FXML Button homeBtn,investmentBtn;
+    @FXML
+    private Button homeBtn, investmentBtn, footprintBtn;
 
-    // Keep a reference to the dashboard controller so we can pass it to other controllers
     private DashboardControllerForm dashboardController;
+    private Parent dashboardView;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadDashboardView();
     }
 
+    public void SwitchAction(ActionEvent e) {
+        Button sourceBtn = (Button) e.getSource();
+
+        if (sourceBtn == homeBtn) {
+            showDashboard();
+        } else if (sourceBtn == investmentBtn) {
+            loadInvestmentView();
+        } else if (sourceBtn == footprintBtn) {
+            loadCarbonFootprint();
+        }
+    }
+
     private void loadDashboardView() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/teamap_ecopay/fxml/dashboard-view.fxml"));
-            Parent dashboardView = loader.load();
-
+            dashboardView = loader.load(); // Load once
             dashboardController = loader.getController();
-
-            contentPane.getChildren().setAll(dashboardView);
+            contentPane.getChildren().setAll(dashboardView); // Initial display
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void SwitchAction(ActionEvent e) throws IOException {
-        Button sourceBtn = (Button) e.getSource();
-
-        if (sourceBtn == homeBtn) {
-            loadDashboardView();
-        } else if (sourceBtn == investmentBtn) {
-            loadInvestmentView();
+    private void showDashboard() {
+        if (dashboardView != null) {
+            contentPane.getChildren().setAll(dashboardView);
         }
     }
 
@@ -54,13 +61,21 @@ public class NavigationControllerForm implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/teamap_ecopay/fxml/investment-view.fxml"));
             Parent investmentView = loader.load();
-
             InvestmentControllerForm investmentController = loader.getController();
-            if (dashboardController != null) {
-                investmentController.setDashboardController(dashboardController);
-            }
+
+            investmentController.setDashboardController(dashboardController);
 
             contentPane.getChildren().setAll(investmentView);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadCarbonFootprint() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/teamap_ecopay/fxml/carbonfootprint.fxml"));
+            Parent footprintView = loader.load();
+            contentPane.getChildren().setAll(footprintView);
         } catch (IOException e) {
             e.printStackTrace();
         }

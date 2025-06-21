@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="587.0" prefWidth="375.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamap_ecopay.Controllers.Forms.CarbonTrackingControllerForm">
+   <children>
+      <HBox prefHeight="494.0" prefWidth="375.0">
+         <children>
+            <VBox prefHeight="501.0" prefWidth="375.0" style="-fx-padding: 20;">
+               <children>
+                  <Label prefHeight="28.0" prefWidth="253.0" style="-fx-label-padding: 0;" text="Carbon Footprint Tracker">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Label>
+                  <Label style="-fx-padding: 5;" text="Transport">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <ComboBox fx:id="TransportType" prefHeight="17.0" prefWidth="150.0" promptText="Select" style="-fx-padding: -2; -fx-background-radius: 15;" />
+                  <Separator prefWidth="200.0" style="-fx-opacity: 0;" />
+                  <HBox maxHeight="1.7976931348623157E308" maxWidth="290.0" prefHeight="24.0" prefWidth="279.0">
+                     <children>
+                        <TextField fx:id="EnterDistance" maxWidth="200.0" promptText="Enter distance (km)" />
+                        <TextField fx:id="EnterTime" maxWidth="200.0" prefHeight="26.0" prefWidth="148.0" promptText="Enter time taken (mins)" />
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" style="-fx-opacity: 0;" />
+                  <Button mnemonicParsing="false" onAction="#addTransportEmissions" style="-fx-padding: 4;" text="Add Transport Emissions" />
+                  <Label fx:id="transportResult" prefHeight="53.0" prefWidth="100.0" style="-fx-label-padding: 5;" text="transport result" />
+                  <Separator prefHeight="14.0" prefWidth="322.0" style="-fx-opacity: 0;" />
+                  <Label style="-fx-padding: 5;" text="Utilities">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Label>
+                  <ComboBox fx:id="UtilityType" prefWidth="150.0" promptText="Select" style="-fx-padding: -2; -fx-background-radius: 15;" />
+                  <Separator prefWidth="200.0" style="-fx-opacity: 0;" />
+                  <TextField fx:id="EnterServingSize" maxWidth="200.0" prefHeight="9.0" prefWidth="200.0" promptText="Enter kWh" />
+                  <Separator prefWidth="200.0" style="-fx-opacity: 0;" />
+                  <Button mnemonicParsing="false" onAction="#addUtilityEmissions" style="-fx-padding: 4;" text="Add Utility Emissions" />
+                  <Label fx:id="utilitiesResult" prefHeight="45.0" prefWidth="122.0" style="-fx-label-padding: 5;" text="util result" />
+                  <Separator prefHeight="7.0" prefWidth="333.0" style="-fx-opacity: 0;" />
+                  <Label style="-fx-padding: 5;" text="Food">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <ComboBox fx:id="FoodType" prefWidth="150.0" promptText="Select" style="-fx-padding: -2; -fx-background-radius: 15;" />
+                  <Separator prefWidth="200.0" style="-fx-opacity: 0;" />
+                  <TextField fx:id="EnterFoodPrice" maxWidth="200.0" promptText="Enter price (MYR)" />
+                  <Separator prefWidth="200.0" style="-fx-opacity: 0;" />
+                  <Button mnemonicParsing="false" onAction="#addFoodEmissions" style="-fx-padding: 4;" text="Add Food Emissions" />
+                  <Label fx:id="foodUtilities" prefHeight="46.0" prefWidth="82.0" style="-fx-label-padding: 5;" text="food result" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <ImageView fx:id="treeImage" fitHeight="118.0" fitWidth="119.0" layoutX="197.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
