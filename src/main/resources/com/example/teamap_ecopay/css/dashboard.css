@@ -1,0 +1,62 @@
+.BalancePane {
+    -fx-background-color: linear-gradient(to left, #DEEBDE, #BEE3BD);
+    -fx-background-radius: 15;
+    -fx-background-insets: 0;
+    -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,.3), 8,0,0,0);
+}
+
+.BalanceLabel {
+  -fx-text-fill: #15430C;
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+  -fx-padding: 0 0 0 10;
+}
+
+.BalanceValue {
+    -fx-alignment: center;
+}
+
+.addBalanceBtn{
+    -fx-pref-width: 30;
+    -fx-background-color:#9FC87E;
+    -fx-background-radius:30px;
+    -fx-cursor:hand;
+    -fx-border-color:black;
+    -fx-border-radius:30px;
+}
+
+.textField{
+    -fx-border-radius:15 0 0 15;
+    -fx-background-radius:15 0 0 15;
+}
+
+.MoneyUnit{
+    -fx-border-radius:0 15 15 0;
+    -fx-background-radius:0 15 15 0;
+}
+
+
+.addMoneyBackground {
+    -fx-background-color:white;
+    -fx-background-radius: 50 50 0 0;
+
+}
+
+
+.addMoneyBtn {
+    -fx-background-radius:15px;
+    -fx-background-color: linear-gradient(to left, #DEEBDE, #BEE3BD);
+    -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,.3), 8,0,0,0);
+    cursor:hand;
+
+}
+
+.ewalletBackground{
+    -fx-background-color: linear-gradient(to left, #326618, #abe3a2);
+    -fx-background-radius:0 0 20 20;
+}
+
+.categories {
+    -fx-border-color:black;
+    -fx-border-radius:20px;
+}

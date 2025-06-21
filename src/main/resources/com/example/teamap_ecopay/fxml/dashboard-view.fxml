@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="587.0" prefWidth="375.0" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teamap_ecopay.Controllers.Forms.DashboardControllerForm">
+   <children>
+      <AnchorPane fx:id="dashboardPane" layoutY="-2.0" prefHeight="598.0" prefWidth="374.0">
+         <children>
+            <AnchorPane layoutY="-5.0" prefHeight="219.0" prefWidth="379.0" styleClass="ewalletBackground" />
+            <VBox fx:id="BalancePane" layoutX="6.0" layoutY="50.0" prefHeight="137.0" prefWidth="166.0" styleClass="BalancePane" stylesheets="@../css/dashboard.css">
+               <children>
+                  <Label fx:id="balanceLabel" prefHeight="26.0" prefWidth="185.0" styleClass="BalanceLabel" text="CURRENT BALANCE" />
+                  <Label fx:id="currentBalanceLabel" alignment="CENTER" prefHeight="71.0" prefWidth="166.0" text="RM3004.00">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addBalanceBtn" alignment="BASELINE_LEFT" minWidth="22.0" mnemonicParsing="false" onAction="#handleSwitchAction" prefHeight="26.0" prefWidth="28.0" styleClass="addBalanceBtn">
+                     <graphic>
+                        <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true" translateX="-3.0">
+                           <image>
+                              <Image url="@../image/addBtn.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox fx:id="incomePane" layoutX="179.0" layoutY="52.0" prefHeight="63.0" prefWidth="190.0" styleClass="BalancePane" stylesheets="@../css/dashboard.css">
+               <children>
+                  <Label fx:id="incomeLabel" prefHeight="26.0" prefWidth="185.0" styleClass="BalanceLabel" text="INCOME" />
+                  <Label alignment="CENTER" prefHeight="32.0" prefWidth="190.0" text="RM1005.00">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox fx:id="spentPanel" layoutX="179.0" layoutY="122.0" prefHeight="63.0" prefWidth="190.0" styleClass="BalancePane" stylesheets="@../css/dashboard.css">
+               <children>
+                  <Label fx:id="spentLabel" prefHeight="26.0" prefWidth="185.0" styleClass="BalanceLabel" text="SPENT" />
+                  <Label alignment="CENTER" prefHeight="32.0" prefWidth="190.0" text="RM2000.00">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <AnchorPane layoutX="20.0" layoutY="254.0" prefHeight="76.0" prefWidth="76.0" styleClass="categories">
+               <children>
+                  <Label layoutX="11.0" layoutY="12.0" prefWidth="61.0" text="Transport" />
+                  <Label layoutX="23.0" layoutY="34.0" prefHeight="26.0" prefWidth="32.0" text="0.7">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="15.0" layoutY="226.0" text="CATEGORIES:" textFill="#15430c">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="110.0" layoutY="254.0" prefHeight="76.0" prefWidth="76.0" styleClass="categories">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="12.0" prefHeight="17.0" prefWidth="61.0" text="Food" />
+                  <Label layoutX="23.0" layoutY="34.0" prefHeight="26.0" prefWidth="32.0" text="0.5">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="290.0" layoutY="254.0" prefHeight="76.0" prefWidth="76.0" styleClass="categories">
+               <children>
+                  <Label layoutX="13.0" layoutY="12.0" prefHeight="17.0" prefWidth="53.0" text="Shopping" />
+                  <Label layoutX="23.0" layoutY="34.0" prefHeight="26.0" prefWidth="32.0" text="0.8">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="200.0" layoutY="254.0" prefHeight="76.0" prefWidth="76.0" styleClass="categories">
+               <children>
+                  <Label layoutX="13.0" layoutY="12.0" text="Untilities" />
+                  <Label layoutX="23.0" layoutY="34.0" prefHeight="26.0" prefWidth="32.0" text="0.4">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="addMoneyPane" layoutX="-2.0" prefHeight="598.0" prefWidth="374.0" visible="false">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="84.0" prefHeight="467.0" prefWidth="346.0" styleClass="addMoneyBackground">
+               <children>
+                  <Label alignment="CENTER" layoutX="-2.0" layoutY="65.0" prefHeight="34.0" prefWidth="348.0" text="ADD MONEY" textFill="#2c5931">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="increaseBtn" layoutX="45.0" layoutY="154.0" minHeight="24.0" mnemonicParsing="false" onAction="#increaseAction" prefHeight="20.0" prefWidth="121.0" styleClass="addMoneyBtn">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/upIcon.png" />
+                           </image>
+                           <effect>
+                              <ColorAdjust brightness="1.0" contrast="1.0" hue="1.0" saturation="1.0" />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="decreaseBtn" layoutX="170.0" layoutY="154.0" minHeight="24.0" mnemonicParsing="false" onAction="#decreaseAction" prefHeight="20.0" prefWidth="121.0" styleClass="addMoneyBtn">
+                     <graphic>
+                        <ImageView fitHeight="13.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/downIcon.png" />
+                           </image>
+                           <effect>
+                              <ColorAdjust brightness="1.0" contrast="1.0" hue="1.0" saturation="1.0" />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="31.0" layoutY="391.0" mnemonicParsing="false" onAction="#addToBalance" prefHeight="25.0" prefWidth="271.0" styleClass="addMoneyBtn" text="ADD TO BALANCE" />
+                  <TextArea layoutX="27.0" layoutY="254.0" prefHeight="118.0" prefWidth="284.0" />
+                  <Label layoutX="29.0" layoutY="228.0" text="Description: " />
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+            <TextField fx:id="amountField" editable="false" layoutX="39.0" layoutY="200.0" prefHeight="27.0" prefWidth="270.0" styleClass="textField" text="0.00" />
+            <TextField alignment="CENTER" editable="false" layoutX="308.0" layoutY="200.0" prefHeight="27.0" prefWidth="33.0" styleClass="MoneyUnit" text="RM" />
+            <ImageView fitHeight="132.0" fitWidth="136.0" layoutX="123.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/credit-card.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="backBtn" layoutX="13.0" layoutY="16.0" mnemonicParsing="false" onAction="#backAction" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/left-arrow.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
