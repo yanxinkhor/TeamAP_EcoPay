@@ -16,7 +16,7 @@ import javafx.util.Duration;
 
 public class DashboardControllerForm {
     @FXML
-    private Button addBalanceBtn,backBtn;
+    private Button addBalanceBtn;
 
     @FXML
     private TextField amountField;
@@ -151,7 +151,6 @@ public class DashboardControllerForm {
         XYChart.Series<String, Number> carbonSeries = new XYChart.Series<>();
         carbonSeries.setName("Weekly Carbon Emissions (kg CO₂)");
 
-        // Sample data - replace with real data later
         carbonSeries.getData().add(new XYChart.Data<>("Mon", 1.5));
         carbonSeries.getData().add(new XYChart.Data<>("Tue", 2.0));
         carbonSeries.getData().add(new XYChart.Data<>("Wed", 3.0));
